@@ -16,354 +16,56 @@
             --texto: #1A1A1A;
             --borde: #E0D8D0;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background-color: var(--fondo);
-            color: var(--texto);
-            line-height: 1.6;
-        }
-        
-        .header {
-            background: var(--cafe-principal);
-            padding: 1rem 5%;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        }
-        
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--blanco);
-            font-size: 1.6rem;
-            font-weight: 700;
-            text-decoration: none;
-        }
-        
-        .logo-icon {
-            font-size: 1.8rem;
-        }
-        
-        .logo span {
-            color: var(--azul-claro);
-        }
-        
-        .nav-menu {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .nav-menu a {
-            color: var(--blanco);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-        
-        .nav-menu a:hover {
-            color: var(--azul-claro);
-        }
-        
-        .btn-upload {
-            background: var(--azul-principal);
-            color: var(--blanco);
-            padding: 0.6rem 1.4rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-        
-        .btn-upload:hover {
-            background: var(--azul-hover);
-        }
-        
-        .hero {
-            background: linear-gradient(120deg, var(--cafe-principal) 0%, var(--azul-principal) 100%);
-            color: var(--blanco);
-            padding: 4rem 5%;
-        }
-        
-        .hero-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .hero h1 {
-            font-size: 2.4rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-        
-        .hero p {
-            font-size: 1.05rem;
-            opacity: 0.95;
-            margin-bottom: 2rem;
-        }
-        
-        .search-bar {
-            display: flex;
-            background: var(--blanco);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-        }
-        
-        .search-bar input {
-            flex: 1;
-            border: none;
-            padding: 1rem 1.2rem;
-            font-size: 1rem;
-            outline: none;
-            color: var(--texto);
-        }
-        
-        .search-bar button {
-            background: var(--azul-principal);
-            color: var(--blanco);
-            border: none;
-            padding: 0 1.5rem;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-        
-        .search-bar button:hover {
-            background: var(--azul-hover);
-        }
-        
-        .filters {
-            background: var(--blanco);
-            padding: 1.5rem 5%;
-            border-bottom: 1px solid var(--borde);
-        }
-        
-        .filters-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .filter-btn {
-            background: var(--fondo);
-            border: 1px solid var(--borde);
-            padding: 0.5rem 1.2rem;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-        
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--azul-principal);
-            color: var(--blanco);
-            border-color: var(--azul-principal);
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 2.5rem auto;
-            padding: 0 5%;
-            min-height: 400px;
-        }
-        
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-        
-        .section-title {
-            font-size: 1.6rem;
-            color: var(--cafe-principal);
-            font-weight: 700;
-        }
-        
-        .results-count {
-            color: #666;
-            font-size: 0.95rem;
-        }
-        
-        .mods-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 1.8rem;
-        }
-        
-        .mod-card {
-            background: var(--blanco);
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid var(--borde);
-            transition: all 0.3s ease;
-        }
-        
-        .mod-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(62, 39, 35, 0.12);
-            border-color: var(--azul-claro);
-        }
-        
-        .mod-image-wrapper {
-            position: relative;
-            width: 100%;
-            height: 200px;
-            background: var(--cafe-medio);
-        }
-        
-        .mod-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .mod-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--azul-principal);
-            color: var(--blanco);
-            padding: 0.3rem 0.8rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-        
-        .mod-content {
-            padding: 1.5rem;
-        }
-        
-        .mod-meta {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 0.8rem;
-            font-size: 0.85rem;
-            color: #666;
-        }
-        
-        .mod-title {
-            font-size: 1.25rem;
-            color: var(--cafe-principal);
-            margin-bottom: 0.6rem;
-            font-weight: 700;
-        }
-        
-        .mod-description {
-            font-size: 0.95rem;
-            color: #555;
-            margin-bottom: 1.2rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        
-        .mod-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 1rem;
-            border-top: 1px solid var(--borde);
-        }
-        
-        .mod-stats {
-            display: flex;
-            gap: 1.2rem;
-            font-size: 0.85rem;
-            color: #666;
-        }
-        
-        .btn-download {
-            background: var(--azul-principal);
-            color: var(--blanco);
-            padding: 0.6rem 1.3rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: background 0.3s;
-        }
-        
-        .btn-download:hover {
-            background: var(--cafe-principal);
-        }
-        
-        .no-results {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: #666;
-        }
-        
-        .no-results h3 {
-            font-size: 1.4rem;
-            color: var(--cafe-principal);
-            margin-bottom: 0.5rem;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: var(--azul-principal);
-            font-weight: 600;
-        }
-        
-        .footer {
-            background: var(--cafe-principal);
-            color: var(--blanco);
-            padding: 3rem 5% 1.5rem;
-            margin-top: 5rem;
-        }
-        
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .footer-logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-text {
-            opacity: 0.8;
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 968px) {
-            .hero-content { grid-template-columns: 1fr; }
-            .nav-menu { display: none; }
-            .mods-grid { grid-template-columns: 1fr; }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--fondo); color: var(--texto); line-height: 1.6; }
+       .header { background: var(--cafe-principal); padding: 1rem 5%; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+       .nav { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
+       .logo { display: flex; align-items: center; gap: 0.5rem; color: var(--blanco); font-size: 1.6rem; font-weight: 700; text-decoration: none; }
+       .logo-icon { font-size: 1.8rem; }
+       .logo span { color: var(--azul-claro); }
+       .nav-menu { display: flex; gap: 2rem; align-items: center; }
+       .nav-menu a { color: var(--blanco); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
+       .nav-menu a:hover { color: var(--azul-claro); }
+       .btn-upload { background: var(--azul-principal); color: var(--blanco); padding: 0.6rem 1.4rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
+       .btn-upload:hover { background: var(--azul-hover); }
+       .hero { background: linear-gradient(120deg, var(--cafe-principal) 0%, var(--azul-principal) 100%); color: var(--blanco); padding: 4rem 5%; }
+       .hero-content { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center; }
+       .hero h1 { font-size: 2.4rem; margin-bottom: 1rem; line-height: 1.2; }
+       .hero p { font-size: 1.05rem; opacity: 0.95; margin-bottom: 2rem; }
+       .search-bar { display: flex; background: var(--blanco); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+       .search-bar input { flex: 1; border: none; padding: 1rem 1.2rem; font-size: 1rem; outline: none; color: var(--texto); }
+       .search-bar button { background: var(--azul-principal); color: var(--blanco); border: none; padding: 0 1.5rem; cursor: pointer; font-weight: 600; transition: background 0.3s; }
+       .search-bar button:hover { background: var(--azul-hover); }
+       .filters { background: var(--blanco); padding: 1.5rem 5%; border-bottom: 1px solid var(--borde); }
+       .filters-content { max-width: 1400px; margin: 0 auto; display: flex; gap: 1rem; flex-wrap: wrap; }
+       .filter-btn { background: var(--fondo); border: 1px solid var(--borde); padding: 0.5rem 1.2rem; border-radius: 20px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
+       .filter-btn.active,.filter-btn:hover { background: var(--azul-principal); color: var(--blanco); border-color: var(--azul-principal); }
+       .container { max-width: 1400px; margin: 2.5rem auto; padding: 0 5%; min-height: 400px; }
+       .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+       .section-title { font-size: 1.6rem; color: var(--cafe-principal); font-weight: 700; }
+       .results-count { color: #666; font-size: 0.95rem; }
+       .mods-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.8rem; }
+       .mod-card { background: var(--blanco); border-radius: 10px; overflow: hidden; border: 1px solid var(--borde); transition: all 0.3s ease; }
+       .mod-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(62, 39, 35, 0.12); border-color: var(--azul-claro); }
+       .mod-image-wrapper { position: relative; width: 100%; height: 200px; background: var(--cafe-medio); }
+       .mod-image { width: 100%; height: 100%; object-fit: cover; }
+       .mod-badge { position: absolute; top: 1rem; right: 1rem; background: var(--azul-principal); color: var(--blanco); padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+       .mod-content { padding: 1.5rem; }
+       .mod-meta { display: flex; gap: 1rem; margin-bottom: 0.8rem; font-size: 0.85rem; color: #666; }
+       .mod-title { font-size: 1.25rem; color: var(--cafe-principal); margin-bottom: 0.6rem; font-weight: 700; }
+       .mod-description { font-size: 0.95rem; color: #555; margin-bottom: 1.2rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+       .mod-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--borde); }
+       .mod-stats { display: flex; gap: 1.2rem; font-size: 0.85rem; color: #666; }
+       .btn-download { background: var(--azul-principal); color: var(--blanco); padding: 0.6rem 1.3rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: background 0.3s; }
+       .btn-download:hover { background: var(--cafe-principal); }
+       .no-results { text-align: center; padding: 4rem 2rem; color: #666; }
+       .no-results h3 { font-size: 1.4rem; color: var(--cafe-principal); margin-bottom: 0.5rem; }
+       .loading { text-align: center; padding: 4rem 2rem; color: var(--azul-principal); font-weight: 600; }
+       .footer { background: var(--cafe-principal); color: var(--blanco); padding: 3rem 5% 1.5rem; margin-top: 5rem; }
+       .footer-content { max-width: 1400px; margin: 0 auto; text-align: center; }
+       .footer-logo { font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; }
+       .footer-text { opacity: 0.8; font-size: 0.9rem; }
+        @media (max-width: 968px) {.hero-content { grid-template-columns: 1fr; }.nav-menu { display: none; }.mods-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -413,13 +115,11 @@
             <h2 class="section-title">Catálogo</h2>
             <span class="results-count" id="resultsCount">Cargando...</span>
         </div>
-        
+
         <div class="loading" id="loading">Cargando mods desde BearYT...</div>
-        
-        <div class="mods-grid" id="modsGrid" style="display: none;">
-            <!-- Los mods se cargan aquí desde Firebase -->
-        </div>
-        
+
+        <div class="mods-grid" id="modsGrid" style="display: none;"></div>
+
         <div class="no-results" id="noResults" style="display: none;">
             <h3>No se encontraron resultados</h3>
             <p>Intenta con otros términos de búsqueda o selecciona otra categoría</p>
@@ -435,11 +135,12 @@
 
     <script type="module">
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-        import { getFirestore, collection, getDocs, query, orderBy, updateDoc, doc, increment } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+        import { getDatabase, ref, onValue, update } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
 
         const firebaseConfig = {
             apiKey: "AIzaSyBPdpCA8xnoZUKM1zkbRbiy6GkrkKNW9so",
             authDomain: "bearyt678.firebaseapp.com",
+            databaseURL: "https://bearyt678-default-rtdb.firebaseio.com",
             projectId: "bearyt678",
             storageBucket: "bearyt678.firebasestorage.app",
             messagingSenderId: "830162245201",
@@ -448,13 +149,13 @@
         };
 
         const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        const ƁĕâṛŶŧ = { db, collection: 'bearyt_mods' };
+        const db = getDatabase(app);
+        const ƁĕâṛŶŧ = { db, path: 'bearyt_mods' };
 
         let modsDatabase = [];
         let currentCategory = 'Todo';
         let currentSearch = '';
-        
+
         const modsGrid = document.getElementById('modsGrid');
         const resultsCount = document.getElementById('resultsCount');
         const noResults = document.getElementById('noResults');
@@ -463,44 +164,45 @@
         const searchBtn = document.getElementById('searchBtn');
         const filterBtns = document.querySelectorAll('.filter-btn');
 
-        // Cargar mods desde Firebase
-        async function cargarModsFirebase() {
-            try {
-                const q = query(collection(ƁĕâṛŶŧ.db, ƁĕâṛŶŧ.collection), orderBy('fechaCreacion', 'desc'));
-                const snapshot = await getDocs(q);
-                
-                modsDatabase = [];
-                snapshot.forEach(doc => {
-                    modsDatabase.push({ id: doc.id, ...doc.data() });
-                });
-
-                loading.style.display = 'none';
-                modsGrid.style.display = 'grid';
-                renderMods();
-            } catch (error) {
-                loading.innerHTML = `<div style="color: #C62828;">Error al cargar mods: ${error.message}</div>`;
-                console.error('Error Firebase:', error);
-            }
+        // Cargar mods desde Realtime Database
+        function cargarModsFirebase() {
+            const modsRef = ref(ƁĕâṛŶŧ.db, ƁĕâṛŶŧ.path);
+            onValue(modsRef, (snapshot) => {
+                if (snapshot.exists()) {
+                    const data = snapshot.val();
+                    modsDatabase = Object.keys(data).map(key => ({ id: key,...data[key] })).reverse();
+                    loading.style.display = 'none';
+                    modsGrid.style.display = 'grid';
+                    renderMods();
+                } else {
+                    loading.style.display = 'none';
+                    modsGrid.style.display = 'none';
+                    noResults.style.display = 'block';
+                    resultsCount.textContent = '0 resultados';
+                }
+            }, (error) => {
+                loading.innerHTML = `<div style="color: #C62828;">Error al cargar: ${error.message}</div>`;
+            });
         }
-        
+
         function renderMods() {
             let filteredMods = modsDatabase;
-            
-            if (currentCategory !== 'Todo') {
+
+            if (currentCategory!== 'Todo') {
                 filteredMods = filteredMods.filter(mod => mod.categoria === currentCategory);
             }
-            
+
             if (currentSearch) {
                 const search = currentSearch.toLowerCase();
-                filteredMods = filteredMods.filter(mod => 
+                filteredMods = filteredMods.filter(mod =>
                     mod.nombre.toLowerCase().includes(search) ||
                     mod.descripcion.toLowerCase().includes(search) ||
                     mod.categoria.toLowerCase().includes(search)
                 );
             }
-            
-            resultsCount.textContent = `${filteredMods.length} ${filteredMods.length === 1 ? 'resultado' : 'resultados'}`;
-            
+
+            resultsCount.textContent = `${filteredMods.length} ${filteredMods.length === 1? 'resultado' : 'resultados'}`;
+
             if (filteredMods.length === 0) {
                 noResults.style.display = 'block';
                 modsGrid.style.display = 'none';
@@ -508,12 +210,12 @@
                 noResults.style.display = 'none';
                 modsGrid.style.display = 'grid';
             }
-            
+
             modsGrid.innerHTML = filteredMods.map(mod => `
                 <article class="mod-card" data-categoria="${mod.categoria}">
                     <div class="mod-image-wrapper">
                         <img src="${mod.imagen}" alt="${mod.nombre}" class="mod-image" onerror="this.src='https://via.placeholder.com/400x200/1E5A7A/FFFFFF?text=BearYT'">
-                        ${mod.badge ? `<span class="mod-badge">${mod.badge}</span>` : ''}
+                        ${mod.badge? `<span class="mod-badge">${mod.badge}</span>` : ''}
                     </div>
                     <div class="mod-content">
                         <div class="mod-meta">
@@ -536,16 +238,14 @@
         }
 
         // Incrementar contador de descargas
-        ƁĕâṛŶŧ.incrementarDescarga = async function(id) {
-            try {
-                await updateDoc(doc(ƁĕâṛŶŧ.db, ƁĕâṛŶŧ.collection, id), {
-                    descargas: increment(1)
-                });
-            } catch (error) {
-                console.error('Error al actualizar descargas:', error);
+        ƁĕâṛŶŧ.incrementarDescarga = function(id) {
+            const modRef = ref(ƁĕâṛŶŧ.db, `${ƁĕâṛŶŧ.path}/${id}`);
+            const mod = modsDatabase.find(m => m.id === id);
+            if (mod) {
+                update(modRef, { descargas: (mod.descargas || 0) + 1 });
             }
         };
-        
+
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterBtns.forEach(b => b.classList.remove('active'));
@@ -554,12 +254,12 @@
                 renderMods();
             });
         });
-        
+
         searchBtn.addEventListener('click', () => {
             currentSearch = searchInput.value.trim();
             renderMods();
         });
-        
+
         searchInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 currentSearch = searchInput.value.trim();
@@ -568,8 +268,6 @@
         });
 
         window.ƁĕâṛŶŧ = ƁĕâṛŶŧ;
-        
-        // Cargar mods al iniciar
         cargarModsFirebase();
     </script>
 </body>
